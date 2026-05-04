@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'detail_page.dart';
 
-class ListPage extends StatelessWidget {
+class ListPage extends StatelessWidget 
+{
   const ListPage({super.key});
 
-  // Cambia a lista vacía [] para probar el estado vacío
-  static const List<String> _items = [
+  static const List<String> _items = 
+  [
     'Tarea A',
     'Tarea B',
     'Tarea C',
   ];
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
+  Widget build(BuildContext context) 
+  {
+    return Scaffold
+    (
       appBar: AppBar(title: const Text('Listado de Tareas')),
       body: _items.isEmpty
           ? const Center(
@@ -34,7 +37,10 @@ class ListPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => Home(),
+                        builder: (_) => DetailPage(
+                          index: index,
+                          text: _items[index],
+                        ),
                       ),
                     );
                   },
